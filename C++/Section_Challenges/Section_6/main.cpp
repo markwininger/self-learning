@@ -1,6 +1,8 @@
 /*
     Frank's Carpet Cleaning Service
-    Charges $30 per room
+    Charges:
+     $25 per small room
+     $30 per small room
     Sales tax rate is 6%
     Estimates are valid for 30 days
 
@@ -36,21 +38,30 @@ int main()
 {
     cout << "Hello, welcome to Frank's Carpet Cleaning Service" << endl;
     cout << "\nHow many rooms would you like cleaned? ";
+    cout << "\nSmall rooms? ";
 
-    int number_of_rooms{0};
-    cin >> number_of_rooms;
+    int number_of_small_rooms{0};
+    cin >> number_of_small_rooms;
 
-    const double price_per_room{30};
-    const double sales_tax{0.06};
+    cout << "\nLarge rooms? ";
+
+    int number_of_large_rooms{0};
+    cin >> number_of_large_rooms;
+
+    const double price_per_small_room{25};
+    const double price_per_large_room{35};
+    const double room_cost = (price_per_small_room * number_of_small_rooms) + (price_per_large_room * number_of_large_rooms);
+    const double sales_tax = room_cost * 0.06;
     const int estimate_expiry{30}; // days
-
     cout << "\nEstimate for carpet cleaning service" << endl;
-    cout << "Number of rooms: " << number_of_rooms << endl;
-    cout << "Price per room: $" << price_per_room << endl;
-    cout << "Cost: $" << price_per_room * number_of_rooms << endl;
-    cout << "Tax: $" << price_per_room * number_of_rooms * sales_tax << endl;
+    cout << "Number of small rooms: " << number_of_small_rooms << endl;
+    cout << "Number of large rooms: " << number_of_large_rooms << endl;
+    cout << "Price per small room: $" << price_per_small_room << endl;
+    cout << "Price per large room: $" << price_per_large_room << endl;
+    cout << "Cost: $" << room_cost << endl;
+    cout << "Tax: $" << sales_tax << endl;
     cout << "=======================================" << endl;
-    cout << "Total estimate: $" << (price_per_room * number_of_rooms) + (price_per_room * number_of_rooms * sales_tax) << endl;
+    cout << "Total estimate: $" << room_cost + sales_tax << endl;
     cout << "This estimate is valid for " << estimate_expiry << " days" << endl;
 
     cout << endl;
