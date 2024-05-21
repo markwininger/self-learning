@@ -1,0 +1,25 @@
+{
+  "config": {
+    "api_command": "cfgshow"
+  },
+  "general_info": {
+    "api_command": "switchshow"
+  },
+  "port": {
+    "api_command": {
+      "crc_errors": "porterrshow",
+      "port_id": "portname",
+      "sfp_info": "sfpshow"
+    },
+    "state": {
+      "no_sfp": "No_Module",
+      "online": "Online"
+    }
+  },
+  "uptime": {
+    "api_command": "uptime"
+  },
+  "version": {
+    "api_command": "version"
+  }
+}
